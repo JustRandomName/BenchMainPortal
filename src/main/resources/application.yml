@@ -1,0 +1,17 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: main
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3308/bench?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    properties.jadira.usertype.autoRegisterUserTypes: true
+    properties.org.hibernate.envers.store_data_at_delete: true
+ribbon:
+  eureka:
+    enabled: false
