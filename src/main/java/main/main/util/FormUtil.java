@@ -2,8 +2,8 @@ package main.main.util;
 
 import static java.time.LocalDate.now;
 
-import models.models.dto.FormDto;
-import models.models.entity.Form;
+import model.dto.FormDto;
+import model.entity.Form;
 
 public final class FormUtil {
     protected FormUtil() {

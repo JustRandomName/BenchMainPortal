@@ -1,6 +1,6 @@
 package main.main.repository;
 
-import models.models.entity.Form;
+import model.entity.Form;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -12,6 +12,9 @@ spring:
     database: MYSQL
     properties.jadira.usertype.autoRegisterUserTypes: true
     properties.org.hibernate.envers.store_data_at_delete: true
-ribbon:
-  eureka:
-    enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true

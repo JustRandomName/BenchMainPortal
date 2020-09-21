@@ -6,9 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+/**
+ * @author n.zhuchkevich
+ * @since 09/21/2020
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EntityScan(basePackages = "models.models")
+@EntityScan(basePackages = {"model.entity"})
 public class MainApplication {
 
     public static void main(String[] args) {

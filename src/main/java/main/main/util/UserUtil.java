@@ -1,30 +1,17 @@
 package main.main.util;
 
 import static java.lang.String.valueOf;
-import static java.util.UUID.fromString;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
 
-import models.models.dto.UserDto;
-import models.models.entity.User;
+import model.dto.UserDto;
+import model.entity.User;
 
+/**
+ * @author n.zhuchkevich
+ * @since 09/21/2020
+ */
 public final class UserUtil {
 
-    public static User fromDtoToEntity(final UserDto dto) {
-        User newUser = new User();
-        if (isNotBlank((dto.getId()))) {
-            newUser.setId(fromString(dto.getId()));
-        }
-        newUser.setFirstName(dto.getFirstName());
-        newUser.setLastName(dto.getLastName());
-        newUser.setMiddleName(dto.getMiddleName());
-        newUser.setDOB(dto.getDOB());
-        newUser.setEnabled(dto.isEnabled());
-        newUser.setUsername(dto.getUsername());
-        newUser.setPassword(dto.getPassword());
-        return newUser;
-    }
-
-    public static UserDto fromEntityToDto(final User user, final String token) {
+    public static UserDto fromEntityToDto(final User user) {
         return new UserDto(valueOf(user.getId()),
                 user.getFirstName(),
                 user.getLastName(),
@@ -32,8 +19,7 @@ public final class UserUtil {
                 user.getDOB(),
                 user.getPassword(),
                 user.getUsername(),
-                user.isEnabled(),
-                token);
+                user.isEnabled());
     }
 
     protected UserUtil() {
