@@ -9,19 +9,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+/**
+ * @author n.zhuchkevich
+ * @since 09/22/2020
+ * */
+@RestController(value = "/form")
 public class FormController {
 
-    private FormService formService;
+    private final FormService formService;
 
     @Autowired
     public FormController(final FormService formService) {
         this.formService = formService;
     }
 
-    @RequestMapping(value = "/form/create", method = POST)
-    public FormDto create(@RequestBody FormDto formDto) {
-        System.out.println(123);
-        return formService.save(formDto);
+    @RequestMapping(value = "/create", method = POST)
+    public FormDto create(@RequestBody final FormDto formDto) {
+        return formService.create(formDto);
+    }
+
+    @RequestMapping(value = "/getForm", method = POST)
+    public FormDto create(@RequestBody final String id) {
+        return formService.retrieveById(id);
     }
 }

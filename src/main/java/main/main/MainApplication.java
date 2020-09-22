@@ -15,8 +15,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EntityScan(basePackages = {"model.entity"})
 public class MainApplication {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         run(MainApplication.class, args);
     }
-
 }
