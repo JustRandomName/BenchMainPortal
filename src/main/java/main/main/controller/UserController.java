@@ -27,8 +27,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/getUserInfo", method = POST)
-    public UserDto get(@RequestBody final UserDto dto) {
-        return userService.getUserByUsername(dto);
+    public UserDto get(@RequestBody final String username) {
+        return userService.getUserByUsername(username);
     }
 
     @RequestMapping(value = "/getUserForms", method = POST)

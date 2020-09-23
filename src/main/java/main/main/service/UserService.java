@@ -29,8 +29,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserDto getUserByUsername(final UserDto dto) {
-        return fromEntityToDto(userRepository.findByUsername(dto.getUsername()));
+    public UserDto getUserByUsername(final String username) {
+        return fromEntityToDto(userRepository.findByUsername(username));
     }
 
     public List<FormDto> retrieveUserForms(final String userId) {
