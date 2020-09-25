@@ -1,5 +1,6 @@
 package main.main.service;
 
+import static java.util.UUID.fromString;
 import static model.utils.UserUtil.fromEntityToDto;
 
 import main.main.repository.UserRepository;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -34,7 +36,7 @@ public class UserService {
     }
 
     public List<FormDto> retrieveUserForms(final String userId) {
-        final Optional<User> user = userRepository.findById(userId);
+        final Optional<User> user = userRepository.findById(fromString(userId));
         return user.map(el -> el.getForms().stream()
                 .map(FormUtil::fromModelToDto)
                 .collect(Collectors.toList()))

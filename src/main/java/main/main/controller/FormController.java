@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author n.zhuchkevich
  * @since 09/22/2020
@@ -32,4 +34,10 @@ public class FormController {
     public FormDto create(@RequestBody final String id) {
         return formService.retrieveById(id);
     }
+//
+//    @RequestMapping(value = "/getUserForms", method = POST)
+//    public List<FormDto> getUserForms(@RequestBody final String userId) {
+//        return formService.retrieveUserFormsByUserId(userId);
+//    }
+
 }
